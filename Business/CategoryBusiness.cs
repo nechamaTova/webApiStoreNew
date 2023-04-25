@@ -16,9 +16,9 @@ namespace Business
         {
             this._categoryRepository = categoryRepository;
         }
-        public async Task<IEnumerable<Category>> GetCategories()
+        public async Task<IEnumerable<Category>> GetCategories(int? maxPrice, int? minPrice, string? name, string? categoryName)
         {
-            return await _categoryRepository.GetCategories();
+            return await _categoryRepository.GetCategories(maxPrice,  minPrice,  name,  categoryName);
         }
         public async Task<Category> addCategory(Category category)
         {

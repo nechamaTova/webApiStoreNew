@@ -18,9 +18,9 @@ namespace LoginEx.Controllers
         }
         // GET: api/<CategoryController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Category>>> Get()
+        public async Task<ActionResult<IEnumerable<Category>>> Get([FromQuery] int? maxPrice, [FromQuery] int? minPrice, [FromQuery] string? name, [FromQuery] string? categoryName)
         {
-            IEnumerable<Category> categories = await _categoryBusiness.GetCategories();
+            IEnumerable<Category> categories = await _categoryBusiness.GetCategories(maxPrice, minPrice, name, categoryName);
             return categories.Count()>0 ? Ok(categories) : NoContent();
         }
 
