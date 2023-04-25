@@ -17,7 +17,7 @@ namespace Repository
         {
             this._store214089435 = store214104465;
         }
-        public async Task<IEnumerable<Category>> GetCategories()
+        public async Task<IEnumerable<Category>> GetCategories()//test
         {
             var categories = await _store214089435.Categories.ToListAsync();
             return categories;
